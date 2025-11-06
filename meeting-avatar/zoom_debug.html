@@ -1,0 +1,854 @@
+<!DOCTYPE html><html xmlns:fb="http://ogp.me/ns/fb#" lang="en-US"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# zoomvideocall: http://ogp.me/ns/fb/zoomvideocall#"><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5WKFT9"></script><script type="text/javascript" async="" src="//cdn3.optimizely.com/js/geo4.js"></script>
+<script nonce="">
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e="undefined"!=typeof globalThis?globalThis:e||self).__MONITOR__=n()}(this,(function(){"use strict";function e(e,n){for(var t in n)e[t]=n[t];return e}var n,t,r,o={logger:!1,enableMonitorPerf:!1,url:"/monitor",path:"",errorLimit:20,cdnDetectTargetUrl:"",cdnDetectCookieKey:"cdn_detect_result",enableMonitorGlobal:!0,enableMonitorVueError:!0,enableMonitorCdn:!0,enableTracking:!0,trackingEndpointUrl:"",debounceSeconds:300,enableDomDetect:!0,isDevEnv:!1,trackingId:""};function i(e){return null===e||"object"!=typeof e&&"function"!=typeof e}function a(e){return"[object ErrorEvent]"===Object.prototype.toString.call(e)}function c(e){return"[object DOMException]"===Object.prototype.toString.call(e)}function u(e){var n=Object.prototype.toString.call(e);return"[object Error]"===n||"[object Exception]"===n||s(e,Error)}function l(e){return s(e,Event)}function s(e,n){try{return e instanceof n}catch(e){return!1}}function f(e){o.logger&&console.log("%c[Monitor Log]: ".concat(e),"background-color: blue; color: white;")}function d(e){for(var n=[],t=1;t<arguments.length;t++)n[t-1]=arguments[t];o.logger&&console.warn("%c[Monitor warn]: ".concat(e),"background-color: yellow; color: black;",n)}function p(e){o.logger&&console.error("%c[Monitor error]: ".concat(e),"background-color: red; color: white;")}!function(e){e[e.GlobalError=0]="GlobalError",e[e.UnhandledRejection=1]="UnhandledRejection",e[e.CdnDetectError=2]="CdnDetectError",e[e.Tracking=3]="Tracking"}(n||(n={})),function(e){e.Error="error",e.Performance="performance",e.CdnDetect="cdn",e.Tracking="tracking",e.WhiteBox="whiteBox",e.LessQuantityDom="lessQuantityDom",e.NoVueApp="noVueApp",e.Vue3PrismVersions="Vue3PrismVersions",e.Vue2Page="Vue2Page",e.CDNTimeOut="CDNTimeOut",e.CDNError="CDNError",e.CDNPerformance="CDNPerformance"}(t||(t={})),function(e){e[e.fcp=0]="fcp",e[e.fid=1]="fid",e[e.lcp=2]="lcp",e[e.cls=3]="cls",e[e.tbt=4]="tbt"}(r||(r={}));
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+var m=function(e,n){return m=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,n){e.__proto__=n}||function(e,n){for(var t in n)Object.prototype.hasOwnProperty.call(n,t)&&(e[t]=n[t])},m(e,n)};var v=function(){return v=Object.assign||function(e){for(var n,t=1,r=arguments.length;t<r;t++)for(var o in n=arguments[t])Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o]);return e},v.apply(this,arguments)};function g(e,n,t,r){return new(t||(t=Promise))((function(o,i){function a(e){try{u(r.next(e))}catch(e){i(e)}}function c(e){try{u(r.throw(e))}catch(e){i(e)}}function u(e){var n;e.done?o(e.value):(n=e.value,n instanceof t?n:new t((function(e){e(n)}))).then(a,c)}u((r=r.apply(e,n||[])).next())}))}function h(e,n){var t,r,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:c(0),throw:c(1),return:c(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function c(i){return function(c){return function(i){if(t)throw new TypeError("Generator is already executing.");for(;a;)try{if(t=1,r&&(o=2&i[0]?r.return:i[0]?r.throw||((o=r.return)&&o.call(r),0):r.next)&&!(o=o.call(r,i[1])).done)return o;switch(r=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,r=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=n.call(e,a)}catch(e){i=[6,e],r=0}finally{t=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,c])}}}var y=/\[\]$/;function b(e,n,t){var r;if(Array.isArray(n))n.forEach((function(n,r){y.test(e)?t(e,n):b(e+"["+("object"==typeof n&&null!==n?r:"")+"]",n,t)}));else if("object"==typeof n)for(r in n)b(e+"["+r+"]",n[r],t);else t(e,n)}function w(e,n){return new Promise((function(t,r){var i=new XMLHttpRequest;i.onreadystatechange=function(){if(4===i.readyState)if(i.status>=200&&i.status<300){var e=function(e){if("string"==typeof e)try{e=JSON.parse(e)}catch(e){}return e}(i.responseText);t({status:e.status,errorCode:e.errorCode,errorMessage:e.errorMessage,result:e.result})}else setTimeout((function(){r(new k("Request failed with status code:".concat(i.status),i))}))},i.onabort=function(){i&&r(new k("Request aborted",i))},i.onerror=function(){r(new k("Network Error",i))};var a="application/x-www-form-urlencoded",c=(null==n?void 0:n.url)||o.url,u=o.headers||{};i.open("POST",c,!0);var l=Object.assign({},{"Content-Type":a},u,null==n?void 0:n.headers);Object.keys(l).forEach((function(e){i.setRequestHeader(e,l[e])}));var s=v({path:o.path||location.pathname,appName:o.appName,cluster:o.cluster,trackingId:o.trackingId||""},e);l["Content-Type"]===a?i.send(function(e){var n=[];for(var t in e)b(t,e[t],r);function r(e,t){n[n.length]=encodeURIComponent(e)+"="+encodeURIComponent(t)}return n.join("&")}(s)):i.send(JSON.stringify(s))}))}var k=function(e){function n(n,t){var r=e.call(this,n)||this;return r.request=t,r.status=t.status,r}return function(e,n){function t(){this.constructor=e}m(e,n),e.prototype=null===n?Object.create(n):(t.prototype=n.prototype,new t)}(n,e),n}(Error);var E={};function C(e,n,t,r){a(e)&&(e=e.message);var o,i="Error";if(o=e,"[object String]"===Object.prototype.toString.call(o)){var c=e.match(/^(?:[Uu]ncaught (?:exception: )?)?(?:((?:Eval|Internal|Range|Reference|Syntax|Type|URI|)Error): )?(.*)$/i);c&&(i=c[1],e=c[2])}return{type:i,message:e,url:n,line:t,column:r}}function T(e,n,t){return{type:"VueError",message:"".concat(e.message,",ComponentName:").concat(n.componentName,",LifecycleHook:").concat(n.lifecycleHook),stacktrace:t}}function S(e,n){var t;return a(e)?{type:"Error",message:e.message,url:e.filename,line:e.lineno,column:e.colno}:(t=e,"[object DOMError]"===Object.prototype.toString.call(t)||c(e)||u(e)?{type:e.name||"Error",message:c(e)||u(e)?e.message:e.name}:l(e)||function(e){return"[object Object]"===Object.prototype.toString.call(e)}(e)?{type:(l(e)?e.constructor.name:n?"UnhandledRejection":"Error")||"Error",message:"Non-Error ".concat(n?"promise rejection":"exception"," captured")}:{type:"Error",message:e})}function D(e){if(!function(e){var n=e.type+e.message;return E[n]?E[n]>=o.errorLimit||(E[n]++,!1):(E[n]=1,!1)}(e)){var n=function(e){return{type:t.Error,exception:JSON.stringify(e)}}(function(e){return Array.isArray(e.message)&&(e.message=e.message[0]),e}(e));w(n).then((function(n){0===n.errorCode?p("Error with type ".concat(e.type," Captured and send to server successfully.")):d("Error Captured and send to server,but something is wrong with message:".concat(n.errorMessage,"."))})).catch((function(e){d("Error Captured but failed to send to the server".concat(e.message?" with message: "+e.message:"","."))}))}}var x=/^(\/?|)([\s\S]*?)((?:\.{1,2}|[^/]+?|)(\.[^./]*|))(?:[/]*)$/;function _(e,n){var t,r,o=(t=e,r=x.exec(t),r?r.slice(1):[])[2];return n&&o.substr(-1*n.length)===n&&(o=o.substr(0,o.length-n.length)),o}var N=function(e,n){return e(n={exports:{}},n.exports),n.exports}((function(e,n){var t;t=function(){function e(){for(var e=0,n={};e<arguments.length;e++){var t=arguments[e];for(var r in t)n[r]=t[r]}return n}function n(e){return e.replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent)}return function t(r){function o(){}function i(n,t,i){if("undefined"!=typeof document){"number"==typeof(i=e({path:"/"},o.defaults,i)).expires&&(i.expires=new Date(1*new Date+864e5*i.expires)),i.expires=i.expires?i.expires.toUTCString():"";try{var a=JSON.stringify(t);/^[\{\[]/.test(a)&&(t=a)}catch(e){}t=r.write?r.write(t,n):encodeURIComponent(String(t)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),n=encodeURIComponent(String(n)).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent).replace(/[\(\)]/g,escape);var c="";for(var u in i)i[u]&&(c+="; "+u,!0!==i[u]&&(c+="="+i[u].split(";")[0]));return document.cookie=n+"="+t+c}}function a(e,t){if("undefined"!=typeof document){for(var o={},i=document.cookie?document.cookie.split("; "):[],a=0;a<i.length;a++){var c=i[a].split("="),u=c.slice(1).join("=");t||'"'!==u.charAt(0)||(u=u.slice(1,-1));try{var l=n(c[0]);if(u=(r.read||r)(u,l)||n(u),t)try{u=JSON.parse(u)}catch(e){}if(o[l]=u,e===l)break}catch(e){}}return e?o[e]:o}}return o.set=i,o.get=function(e){return a(e,!1)},o.getJSON=function(e){return a(e,!0)},o.remove=function(n,t){i(n,"",e(t,{expires:-1}))},o.defaults={},o.withConverter=t,o}((function(){}))},e.exports=t()})),j={},O={};function I(e){var t;j[e.type]=j[e.type]||[],null===(t=j[e.type])||void 0===t||t.push(e.callback),function(e){var t=e.type;if(O[t])return;switch(O[t]=!0,t){case n.GlobalError:R=window.onerror,window.onerror=function(e,t,r,o,i){var a;return Array.isArray(e)&&(e=(a=e)[0],t=a[1],r=a[2],o=a[3],i=a[4]),P(n.GlobalError,{message:e,url:t,line:r,column:o,error:i}),!!R&&R.call(this,e,t,r,o,i)};break;case n.UnhandledRejection:M=window.onunhandledrejection,window.onunhandledrejection=function(e){return P(n.UnhandledRejection,e),!M||M.call(this,e)};break;case n.CdnDetectError:!function(){var e="disable",t="enable",r=Date.now(),i=new Date(r+12e4),a=o||{},c=a.cdnDetectCookieKey,u=void 0===c?"":c,l=a.cdnDetectTargetUrl;if(!u||!l)return;if(N.get(u))return;var s=function(){var o,a,c,s,f,d=new Image,p=setTimeout((function(){d.onload=null,N.set(u,e,{expires:i}),P(n.CdnDetectError)}),1e4);d.onerror=function(){clearTimeout(p),N.set(u,e,{expires:i}),P(n.CdnDetectError)},d.onload=function(){clearTimeout(p),N.set(u,t,{expires:i})},d.src=(o=l,a="currentTime",c=String(r),s="",(f=new RegExp("[&\\?]"+a+"=")).test(o)?(f=new RegExp("([&\\?])"+a+"=\\d+"),s=o.replace(f,"$1"+a+"="+c)):s=o.indexOf("?")>-1?o+"&"+a+"="+c:o+"?"+a+"="+c,s)};"loading"!==document.readyState?s():document.addEventListener&&document.addEventListener("DOMContentLoaded",s)}()}}(e)}function P(e,n){var t;j[e]&&(null===(t=j[e])||void 0===t||t.forEach((function(e){try{e(n)}catch(e){}})))}var R=null;var M=null;function U(){I({type:n.GlobalError,callback:function(e){var n=e.message,t=e.url,r=e.line,o=e.column,a=e.error,c=i(a)?C(n,t,r,o):S(a,!1);p(c.message),D(c)}}),I({type:n.UnhandledRejection,callback:function(e){var n=e;try{"reason"in e?n=e.reason:"detail"in e&&"reason"in e.detail&&(n=e.detail.reason)}catch(e){}var t=i(n)?{type:"UnhandledRejection",message:"Non-Error promise rejection captured with value: ".concat(n)}:S(n,!0);p(t.message),D(t)}})}function $(e){return g(this,void 0,void 0,(function(){return h(this,(function(n){return[2,w(function(e){var n,r={};for(n in e){var i=e[n];"number"==typeof i&&i<=0&&!isNaN(i)||(r[n]=e[n])}return function(e){o.logger&&(console.table?console.table(e):console.log(e))}(r),{type:t.Performance,performance:JSON.stringify(e)}}(e)).then((function(e){0===e.errorCode?f("Performance message send to server successfully."):d("Performance send to server,but something is wrong with message:".concat(e.errorMessage,"."))})).catch((function(e){return d("Performance message failed to send to the server".concat(e.message?" with message: "+e.message:"",".")),Promise.reject(e)}))]}))}))}function V(e){return parseFloat(e.toFixed(2))}var A={},B=function(e,n){var t=V(e);A[n]=t},L={value:{css:0,fetch:0,img:0,link:0,other:0,script:0,total:0,xmlhttprequest:0,iframe:0}},q=function(e){var n=e.domainLookupEnd,t=e.domainLookupStart,r=e.connectEnd,o=e.connectStart,i=e.responseStart,a=e.requestStart,c=e.responseEnd,u=e.redirectEnd,l=e.redirectStart,s=e.domInteractive,f=e.loadEventStart,d=e.domContentLoadedEventEnd,p=e.fetchStart;B(u-l,"rdt"),B(n-t,"dnst"),B(r-o,"tcpt"),B(i-a,"nett"),B(c-i,"dht"),B(s-c,"dit"),B(f-d,"rlt"),B(d-p,"dlt"),B(f-p,"plt")},H={value:0},F={value:0},G={value:0},z={value:0},J={},W={},K=function(e,n){try{var t=new PerformanceObserver((function(e){n(e.getEntries())}));return t.observe({type:e,buffered:!0}),t}catch(e){d(String(e))}return null},Q=function(e){var n;null===(n=W[e])||void 0===n||n.disconnect(),delete W[e]},Z=function(e){e.forEach((function(e){e.decodedBodySize&&e.initiatorType&&(L.value[e.initiatorType]+=e.decodedBodySize/1e3||0,L.value.total+=e.decodedBodySize/1e3||0)}))},X=function(e){e.forEach((function(e){J=e}))},Y=function(e){var n=e.pop();n&&!n.hadRecentInput&&n.value&&(H.value+=n.value)},ee=function(e){var n,t,o=e.pop();o&&(B(o.processingStart-o.startTime,"fidv"),B(o.duration,"fid")),Q(r.fid),B(G.value,"lcp"),W[r.cls]&&"function"==typeof(null===(n=W[r.cls])||void 0===n?void 0:n.takeRecords)&&(null===(t=W[r.cls])||void 0===t||t.takeRecords()),B(H.value,"cls"),B(z.value,"tbt"),setTimeout((function(){B(z.value,"tbt5"),Object.keys(L.value).forEach((function(e){var n="".concat(e.slice(0,2),"s");B(L.value[e],n)})),q(J),$(A)}),5e3)},ne=function(e){e.forEach((function(e){if(!("self"!==e.name||e.startTime<F.value)){var n=e.duration-50;n>0&&(z.value+=n)}}))},te=function(e){e.forEach((function(e){"first-paint"===e.name?B(e.startTime,"fp"):"first-contentful-paint"===e.name&&(F.value=e.startTime,B(F.value,"fcp"),W[r.tbt]=K("longtask",ne),Q(r.fcp))}))},re=function(e){var n=e.pop();n&&(G.value=n.renderTime||n.loadTime)},oe=window.performance||window.msPerformance||window.webkitPerformance,ie=function(){return oe&&!!oe.getEntriesByType&&!!oe.now&&!!oe.mark},ae={},ce=function(){var e=window.performance;e.timing&&e.getEntries&&("PerformanceObserver"in window&&(K("navigation",X),W[r.fcp]=K("paint",te),W[r.fid]=K("first-input",ee),W[r.lcp]=K("largest-contentful-paint",re),K("resource",Z),W[r.cls]=K("layout-shift",Y)),window.addEventListener("load",(function(){if(e.getEntriesByType("paint").length>0)return!1;q(e.timing),function(e){e.getEntriesByType("resource").forEach((function(e){e.duration&&e.initiatorType&&(L.value[e.initiatorType]+=e.duration,L.value.total+=e.duration)})),Object.keys(L.value).forEach((function(e){var n="".concat(e.slice(0,2),"s");B(L.value[e],n)}))}(e),$(A)})))};var ue=function(e){oe.measure(e,"mark_".concat(e,"_start"),"mark_".concat(e,"_end"));var n=oe.getEntriesByName(e).pop();return n&&"measure"===n.entryType?V(n.duration):-1};var le,se=[];function fe(){I({type:n.Tracking,callback:function(e){var n;se.push(e),se.length>=20?de():(n=o.debounceSeconds||60,le&&clearTimeout(le),le=setTimeout((function(){de()}),1e3*n))}})}function de(){if(se.length>0){var e=se.splice(0,se.length);w({type:t.Tracking,trackingContent:e},{url:o.trackingEndpointUrl,headers:o.trackingEndpointUrlHeaders}).then((function(){f("Tracking Captured and send to server successfully")})).catch((function(e){d("Error Captured but failed to send to the server".concat(e.message?" with message: "+e.message:"","."))}))}}const pe=/(^|@)\S+:\d+/,me=/^\s*at .*(\S+:\d+|\(native\))/m,ve=/^(eval@)?(\[native code\])?$/;function ge(e,n){if(void 0!==e.stacktrace||void 0!==e["opera#sourceloc"])return function(e,n){return!e.stacktrace||e.message.includes("\n")&&e.message.split("\n").length>e.stacktrace.split("\n").length?function(e,n){const t=/Line (\d+).*script (?:in )?(\S+)/i,r=e.message.split("\n"),o=[];for(let e=2,n=r.length;e<n;e+=2){const n=t.exec(r[e]);n&&o.push({file:n[2],line:+n[1],raw:r[e]})}return ye(o,n)}(e):e.stack?function(e,n){const t=ye(e.stack.split("\n").filter((e=>!!e.match(pe)&&!e.match(/^Error created at/))),n);return t.map((e=>{const n=e.split("@"),t=he(n.pop()),r=n.shift()||"",o=r.replace(/<anonymous function(: (\w+))?>/,"$2").replace(/\([^)]*\)/g,"")||void 0;let i;r.match(/\(([^)]*)\)/)&&(i=r.replace(/^[^(]+\(([^)]*)\)$/,"$1"));return{function:o,args:void 0===i||"[arguments not available]"===i?void 0:i.split(","),file:t[0],line:t[1]?+t[1]:void 0,col:t[2]?+t[2]:void 0,raw:e}}))}(e,n):function(e,n){const t=/Line (\d+).*script (?:in )?(\S+)(?:: In function (\S+))?$/i,r=e.stacktrace.split("\n"),o=[];for(let e=0,n=r.length;e<n;e+=2){const n=t.exec(r[e]);n&&o.push({function:n[3]||void 0,file:n[2],line:n[1]?+n[1]:void 0,raw:r[e]})}return ye(o,n)}(e)}(e,n);if(e.stack&&e.stack.match(me))return function(e,n){return function(e,n){const t=ye(e.split("\n").filter((e=>!!e.match(me))),n);return t.map((e=>{e.includes("(eval ")&&(e=e.replace(/eval code/g,"eval").replace(/(\(eval at [^()]*)|(,.*$)/g,""));let n=e.replace(/^\s+/,"").replace(/\(eval code/g,"(").replace(/^.*?\s+/,"");const t=n.match(/ (\(.+\)$)/);n=t?n.replace(t[0],""):n;const r=he(t?t[1]:n);return{function:t&&n||void 0,file:["eval","<anonymous>"].includes(r[0])?void 0:r[0],line:r[1]?+r[1]:void 0,col:r[2]?+r[2]:void 0,raw:e}}))}(e.stack,n)}(e,n);if(e.stack)return function(e,n){return function(e,n){const t=ye(e.split("\n").filter((e=>!e.match(ve))),n);return t.map((e=>{if(e.includes(" > eval")&&(e=e.replace(/ line (\d+)(?: > eval line \d+)* > eval:\d+:\d+/g,":$1")),e.includes("@")||e.includes(":")){const n=/(([^\n\r"\u2028\u2029]*".[^\n\r"\u2028\u2029]*"[^\n\r@\u2028\u2029]*(?:@[^\n\r"\u2028\u2029]*"[^\n\r@\u2028\u2029]*)*(?:[\n\r\u2028\u2029][^@]*)?)?[^@]*)@/,t=e.match(n),r=t&&t[1]?t[1]:void 0,o=he(e.replace(n,""));return{function:r,file:o[0],line:o[1]?+o[1]:void 0,col:o[2]?+o[2]:void 0,raw:e}}return{function:e}}))}(e.stack,n)}(e,n);if(n?.allowEmpty)return[];throw new Error("Cannot parse given Error object")}function he(e){if(!e.includes(":"))return[e,void 0,void 0];const n=/(.+?)(?::(\d+))?(?::(\d+))?$/.exec(e.replace(/[()]/g,""));return[n[1],n[2]||void 0,n[3]||void 0]}function ye(e,n){return n&&null!=n.slice?Array.isArray(n.slice)?e.slice(n.slice[0],n.slice[1]):e.slice(0,n.slice):e}function be(e){try{var n=function(e,n){return ge(e,n).map((e=>({functionName:e.function,args:e.args,fileName:e.file,lineNumber:e.line,columnNumber:e.col,source:e.raw})))}(e);return n.map((function(e){return{file:e.fileName,function:e.functionName,line:e.lineNumber,col:e.columnNumber}}))}catch(e){return[]}}var we=/(?:^|[-_/])(\w)/g,ke="root",Ee="anonymous component",Ce={};function Te(){window.Vue&&(window.Vue.config.errorHandler=De)}var Se,De=function(e,n,t){var r={};if(n)try{r.componentName=function(e){if(e.$root===e)return ke;if(e.$options.name)return e.$options.name;if(e.$options._componentTag)return e.$options._componentTag;if(e.$options.__file){var n=_(e.$options.__file.replace(/^[a-zA-Z]:/,"").replace(/\\/g,"/"),".vue");return Ce[n]||(Ce[n]=n.replace(we,(function(e,n){return n?n.toUpperCase():""})))}return Ee}(n),r.propsData=n.$options.propsData}catch(e){d("Unable to extract metadata from Vue component.")}t&&(r.lifecycleHook=t),d("Error in ".concat(t,': "').concat(e.toString(),'"'),n),D(T(e,r,be(e)))};var xe=((Se={}).sp="serverPrefetch hook",Se.bc="beforeCreate hook",Se.c="created hook",Se.bm="beforeMount hook",Se.m="mounted hook",Se.bu="beforeUpdate hook",Se.u="updated",Se.bum="beforeUnmount hook",Se.um="unmounted hook",Se.a="activated hook",Se.da="deactivated hook",Se.ec="errorCaptured hook",Se.rtc="renderTracked hook",Se.rtg="renderTriggered hook",Se[0]="setup function",Se[1]="render function",Se[2]="watcher getter",Se[3]="watcher callback",Se[4]="watcher cleanup function",Se[5]="native event handler",Se[6]="component event handler",Se[7]="vnode hook",Se[8]="directive hook",Se[9]="transition hook",Se[10]="app errorHandler",Se[11]="app warnHandler",Se[12]="ref function",Se[13]="async component loader",Se[14]="scheduler flush. This is likely a Vue internals bug. Please open an issue at https://github.com/vuejs/core .",Se),_e=/(?:^|[-_])(\w)/g;function Ne(e,n,t){void 0===t&&(t=!1);var r=function(e,n){return void 0===n&&(n=!0),"function"==typeof e?e.displayName||e.name:e.name||n&&e.__name}(n);if(!r&&n.__file){var o=n.__file.match(/([^/\\]+)\.\w+$/);o&&(r=o[1])}if(!r&&e&&e.parent){var i=function(e){for(var t in e)if(e[t]===n)return t};r=i(e.components||e.parent.type.components)||i(e.appContext.components)}return r?r.replace(_e,(function(e){return e.toUpperCase()})).replace(/[-_]/g,""):t?"App":"Anonymous"}var je=function(e,n,t){try{var r=Ne(n.$,n.$.type),o=Oe(t),i=xe[o],a={componentName:r};i&&(a.lifecycleHook=i),d("Error in ".concat(i,': "').concat(e.message,'"')),D(T(e,a,be(e)))}catch(e){d(e.message)}},Oe=function(e){return e.split("-").pop()||""};function Ie(e,n){return e.ownerDocument&&e.ownerDocument.defaultView?e.ownerDocument.defaultView.getComputedStyle(e,n):void 0}function Pe(e){var n=Ie(e);if(!n)return!0;if("contents"===n.display){for(var t=e.firstChild;t;t=t.nextSibling){if(1===t.nodeType&&Pe(t))return!0;if(3===t.nodeType&&Re(t))return!0}return!1}if(!function(e,n){return!(n=null!=n?n:Ie(e))||"visible"===n.visibility}(e,n))return!1;var r=e.getBoundingClientRect();return r.width>0&&r.height>0}function Re(e){var n=e.ownerDocument.createRange();n.selectNode(e);var t=n.getBoundingClientRect();return t.width>0&&t.height>0}var Me,Ue=0;function $e(){var e=document.querySelector("#app");if(e){if(function(e){if("function"!=typeof document.elementsFromPoint)return!1;var n=0,t=e.getBoundingClientRect(),r=t.left,o=t.top,i=t.width,a=t.height;function c(e,n){return document.elementsFromPoint(e,n)[0]}for(var u=1;u<10;u++)c(i*u/10+r,a/2+o)===e&&n++,5!==u&&(c(i/2+r,a*u/10+o)===e&&n++,c(i*u/10+r,a*u/10+o)===e&&n++,c(i*u/10+r,a-a*u/10+o)===e&&n++);return n>=30}(e)){if(++Ue>=3)clearInterval(Me),d((n={type:t.WhiteBox,exception:"Detected whiteBox: element #app is white box by sampling."}).exception),Ve(n);return}if(function(e){if(0===(null==e?void 0:e.childElementCount))return!0;var n=0,t=!1;return function e(r){if(!(n>4||t)){var o=[],i=r.firstElementChild;if(i){if(Pe(i)&&(n++,t="IFRAME"===i.nodeName))return;for(o.unshift(i);i=i.nextElementSibling;){if(Pe(i)&&(n++,t="IFRAME"===i.nodeName))return;o.unshift(i)}for(;o.length;)e(o.pop())}}}(e),n<5&&!t}(e)){var n;if(++Ue>=3)clearInterval(Me),d((n={type:t.LessQuantityDom,exception:"Detected whiteBox: element #app has less quantity dom."}).exception),Ve(n);return}}clearInterval(Me)}function Ve(e){e&&w(e).then((function(n){0===n.errorCode?d("Type ".concat(e.type," Captured and send to server successfully.")):d("Error Captured and send to server,but something is wrong with message:".concat(n.errorMessage,"."))})).catch((function(e){d("Error Captured but failed to send to the server".concat(e.message?" with message: "+e.message:"","."))}))}function Ae(){window.addEventListener("load",(function(){Me=setInterval((function(){var e;e=requestIdleCallback((function(n){n.timeRemaining()>0&&($e(),cancelIdleCallback(e))}),{timeout:1e3})}),5e3)}))}function Be(e){w(e).catch((function(e){d("Error Captured but failed to send to the server".concat(e.message?" with message: "+e.message:"","."))}))}function Le(e){var n,t,r,o;return(null===(n=e.__vue__)||void 0===n?void 0:n._isVue)&&(null===(o=null===(r=null===(t=e.__vue__)||void 0===t?void 0:t.$options)||void 0===r?void 0:r._componentTag)||void 0===o?void 0:o.startsWith("zm-"))}function qe(){var e=document.querySelector("#app")||document.querySelector(".content-body")||document.querySelector(".mini-layout-body");if(e&&function(e){for(var n,t=document.createTreeWalker(e,NodeFilter.SHOW_ELEMENT);n=t.nextNode();)if(Le(n))return!0;return!1}(e))return Be({type:t.Vue2Page}),!0}function He(){!function(){var e=window.__Vue3PrismVersions;if(Array.isArray(e)&&e.length)return Be({type:t.Vue3PrismVersions,message:JSON.stringify(e)}),!0}()&&qe()}function Fe(){window.addEventListener("load",(function(){var e=setTimeout((function(){var n;n=requestIdleCallback((function(e){e.timeRemaining()>0&&(He(),cancelIdleCallback(n))}),{timeout:1e3}),clearTimeout(e)}),5e3)}))}function Ge(e){window.addEventListener("load",(function(){var n=setTimeout((function(){var t;t=requestIdleCallback((function(n){n.timeRemaining()>0&&(e(),cancelIdleCallback(t))}),{timeout:1e3}),clearTimeout(n)}),0)}))}function ze(e,n){return void 0===n&&(n=3e3),new Promise((function(r,o){var i=new Image,a=!1,c=setTimeout((function(){a||(i.onload=null,i.onerror=null,o({type:t.CDNTimeOut,timeout:n,url:e}))}),n);i.onload=function(){a=!0,clearTimeout(c),r({type:t.CDNPerformance,url:e})},i.onerror=function(){clearTimeout(c),o({type:t.CDNError,url:e})},i.src="".concat(e,"?t=").concat(Math.floor(Date.now()/1e3))}))}function Je(e,n,t){return void 0===n&&(n=3e3),void 0===t&&(t=!0),g(this,void 0,void 0,(function(){return h(this,(function(r){return[2,ze(e,n).then((function(e){var n=function(e){var n;return null===(n=performance.getEntriesByType("resource").filter((function(n){return n.name.includes(e)})))||void 0===n?void 0:n[0]}(e.url);return t&&(null==n?void 0:n.duration)&&n.duration>400&&w(v(v({},e),{duration:n.duration})),!0})).catch((function(e){return t&&w(e),!1}))]}))}))}var We=!1;function Ke(e,n,t){return void 0===t&&(t=3e3),g(this,void 0,void 0,(function(){var r,o,i,a,c,u,l,s;return h(this,(function(f){switch(f.label){case 0:if(!e||"object"!=typeof n)return[2,""];f.label=1;case 1:return f.trys.push([1,7,,8]),[4,Je("".concat(e.endsWith("/")?e:"".concat(e,"/"),"cdn-detect.png"),t)];case 2:if(f.sent())return[2,""];for(a in r=new Set([e]),i=[],o=n)i.push(a);c=0,f.label=3;case 3:return c<i.length?(a=i[c])in o?(l=n[u=a],r.has(l)?[3,5]:[4,Je("".concat(l.endsWith("/")?l:"".concat(l,"/"),"cdn-detect.png"),t,!1)]):[3,5]:[3,6];case 4:if(s=f.sent(),r.add(l),s)return[2,u];f.label=5;case 5:return c++,[3,3];case 6:return[3,8];case 7:return f.sent(),[3,8];case 8:return[2,""]}}))}))}window.requestIdleCallback=window.requestIdleCallback||function(e){var n=Date.now();return setTimeout((function(){e({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-n))}})}),1)},window.cancelIdleCallback=window.cancelIdleCallback||function(e){clearTimeout(e)};var Qe={monitorOptions:o,init:function(n){e(o,n);var t=o.enableMonitorVueError,r=o.enableMonitorCdn,i=o.enableMonitorPerf,a=o.enableTracking,c=o.cdnDetectTargetUrl,u=o.enableDomDetect,l=o.isDevEnv;o.enableMonitorGlobal&&U(),t&&Te(),i&&(ie()?ce():f("isPerformanceSupported: false")),r&&c&&function(){var e=o||{},n=e.cdnDetectCookieKey,t=void 0===n?"":n,r=e.cdnDetectTargetUrl;if(!N.get(t))try{Ge((function(){if(r&&!We){Je(r);var e=new Date;e.setTime(e.getTime()+3e4),N.set(t,"1",{expires:e})}}))}catch(e){}}(),a&&fe(),u&&Ae(),l&&Fe()},updateConfig:function(n){e(o,n)},startMark:function(e){ie()&&!ae[e]?(ae[e]=!0,oe.mark("mark_".concat(e,"_start"))):d("Performance not Supported")},endMark:function(e,n){if(ie()&&ae[e]){oe.mark("mark_".concat(e,"_end")),delete ae[e];var t={name:e,duration:ue(e)};(null==n?void 0:n.detail)&&(t.detail=n.detail),$({cm:t})}else d("Performance not Supported")},capturePerformance:$,captureException:D,tracking:function(e){P(n.Tracking,e)},vueGlobalErrorHandler:De,setupVue3ErrorHandler:function(e){e.config.errorHandler=je},sendCustomLog:w,webCdnEndpointsFallback:function(e,n,t){return void 0===t&&(t=3e3),g(this,void 0,void 0,(function(){var r,o,i;return h(this,(function(a){switch(a.label){case 0:We=!0,a.label=1;case 1:return a.trys.push([1,3,,4]),[4,Promise.all([Ke(e.initialDomain,e.backupDomains,t),Ke(e.feInitialDomain,e.feBackupDomains,t)])];case 2:return r=a.sent(),o=r[0],i=r[1],o||i?(sessionStorage.getItem("zmCDNShouldSwitch")||(sessionStorage.setItem("zmCDNShouldSwitch","1"),n(o,i,N)),[3,4]):(sessionStorage.removeItem("zmCDNShouldSwitch"),[2]);case 3:return a.sent(),[3,4];case 4:return[2]}}))}))}};return Qe}));
+</script><script nonce="">
+window.__MONITOR__.init({
+logger: false,
+isDevEnv: false,
+url: 'https://log-gateway.zoom.us/nws/join/logger/felog',
+tid: 0,
+path: '\/signin',
+errorLimit: 20,
+enableMonitorPerf: true,
+cdnDetectTargetUrl: 'https://st1.zoom.us/cdn-detect.png',
+cluster: 'aw1',
+isLoggedIn: false,
+trackingId: 'v=2.0;clid=aw1;rid=WEB_671ab93f83444836372de642c9bd4026'
+})
+</script>
+<title>Sign In | Zoom</title><script type="text/javascript" nonce="" src="/assets/zm_bundle.js?cache"> </script> 
+<script nonce="" type="text/javascript" async="">
+    document.addEventListener("DOMContentLoaded", function() {
+            const targetScript = document.createElement("script");
+            targetScript.onload = function () {
+                window.cloudflare.jsd.executeOnce({callback: function(result){
+                    if(result!="success"){
+                        window.cloudflare.jsd.executeOnce({nonce:"1yt5GOgwSDuElT0Xt9bA2g"});
+                    }
+                },nonce:"1yt5GOgwSDuElT0Xt9bA2g"});
+            }
+        targetScript.src = "/cdn-cgi/challenge-platform/scripts/jsd/api.js";
+        document.body.appendChild(targetScript);
+      });
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+<meta name="google-site-verification" content="8WU-FkemSTzA1EpoynHUDYe2UxPXiMS53FBXk6_qVy4">
+<meta name="google-site-verification" content="J_tzcwoKXfPkhsWbiS7cM6WEn3pjCr_DhMNmhRtd960">
+<meta name="google-site-verification" content="o7_kGQ-oKZjWTkzWK3NYR9JUf3SvQKIBwjHgqTE_FHU">
+<meta name="google-site-verification" content="QXsuSwndXLLWh52gEd4ig7alEmTyDp0NPo4GCKsUH5k">
+<meta name="google-site-verification" content="Vt60qsrxhpi8GdAMlhQod8oxA2LAtN908SnMDdelCYc">
+<meta name="google-site-verification" content="v3_Ow9RbJsRZ9MLl--QrhABeFcA9oP7OBXhY50O4QuA">
+<meta name="google-site-verification" content="0fZHb1ni-k_iNiYVnomwmnY9ITBunxqU8VC49mHDNxc">
+<meta name="p:domain_verify" content="2bec2c9f9a864e14528964bf24c404b3">
+<meta name="keywords" content="zoom, zoom.us, video conferencing, video conference, online meetings, web meeting, video meeting, cloud meeting, cloud video, group video call, group video chat, screen share, application share, mobility, mobile collaboration, desktop share, video collaboration, group messaging">
+<meta name="description" content="Sign in to your Zoom account to join a meeting, update your profile, change your settings, and more!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zoom.us/signin">
+<meta property="og:title" content="Sign In | Zoom">
+<meta property="og:description" content="Sign in to your Zoom account to join a meeting, update your profile, change your settings, and more!">
+<meta property="og:image" content="https://st3.zoom.us/static/6.3.45448/image/thumb.png">
+<meta property="og:site_name" content="Zoom">
+<meta property="fb:app_id" content="113289095462482">
+<meta property="twitter:account_id" content="522701657">
+<link rel="shortcut icon" href="https://st1.zoom.us/zoom.ico" type="image/x-icon">
+<link rel="icon" sizes="32x32" href="https://st3.zoom.us/zoom-32x32.png">
+<link rel="icon" sizes="48x48" href="https://st2.zoom.us/zoom-48x48.png">
+<link rel="icon" sizes="96x96" href="https://st2.zoom.us/zoom-96x96.png">
+<link rel="icon" sizes="144x144" href="https://st2.zoom.us/zoom-144x144.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://st2.zoom.us/zoom-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://st3.zoom.us/zoom-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://st2.zoom.us/zoom-180x180.png">
+<link rel="canonical" href="https://zoom.us/signin">
+<link rel="alternate" href="https://zoom.us/signin" hreflang="x-default">
+<link rel="alternate" href="https://zoom.us/signin" hreflang="en">
+<link rel="alternate" href="https://zoom.us/es/signin" hreflang="es">
+<link rel="alternate" href="https://zoom.us/de/signin" hreflang="de">
+<link rel="alternate" href="https://zoom.us/zh-cn/signin" hreflang="zh-cn">
+<link rel="alternate" href="https://zoom.us/zh-tw/signin" hreflang="zh-tw">
+<link rel="alternate" href="https://zoom.us/fr/signin" hreflang="fr">
+<link rel="alternate" href="https://zoom.us/pt/signin" hreflang="pt">
+<link rel="alternate" href="https://zoom.us/ja/signin" hreflang="ja">
+<link rel="alternate" href="https://zoom.us/ru/signin" hreflang="ru">
+<link rel="alternate" href="https://zoom.us/ko/signin" hreflang="ko">
+<link rel="alternate" href="https://zoom.us/it/signin" hreflang="it">
+<link rel="alternate" href="https://zoom.us/vi/signin" hreflang="vi">
+<link rel="alternate" href="https://zoom.us/pl/signin" hreflang="pl">
+<link rel="alternate" href="https://zoom.us/tr/signin" hreflang="tr">
+<link rel="alternate" href="https://zoom.us/id/signin" hreflang="id">
+<link rel="alternate" href="https://zoom.us/nl/signin" hreflang="nl">
+<link rel="alternate" href="https://zoom.us/sv/signin" hreflang="sv">
+<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/kgjfgplpablkjnlkjmjdecgdpfankdle">
+<script nonce="" type="text/javascript">
+var resourceAccountIdRoutingURl = "";
+resourceAccountIdRoutingURl = resourceAccountIdRoutingURl==""?undefined:resourceAccountIdRoutingURl;
+</script>
+
+<script nonce="" type="text/javascript" id="campaign_flags">
+try {
+window.campaignFlags = {
+enableLiveChatSupport: true,
+locale: document.documentElement.getAttribute('lang') || '',
+isLoggedIn: false,
+currencyValue: 'INR',
+currentCountry: 'in'.toLocaleUpperCase(),
+billingCountry: {
+},
+webClusterId: 'aw1'.toLocaleUpperCase(),
+buildVersion: '6.3.45448'.toLocaleUpperCase(),
+};
+window.optimizely = window.optimizely || [];
+window.optimizely.push({
+type: 'user',
+attributes: {
+visitorHasBillingEditPermission: window.campaignFlags.hasBillingEditPermission,
+visitorHasBillingReadPermission: window.campaignFlags.hasBillingReadPermission,
+visitorSoldToCountry: window.campaignFlags.billingCountry.soldTo,
+visitorBillToCountry: window.campaignFlags.billingCountry.billTo,
+visitorIpCountry: window.campaignFlags.currentCountry,
+visitorCurrency: window.campaignFlags.currencyValue,
+visitorLoggedIn: window.campaignFlags.isLoggedIn,
+visitorLocale: window.campaignFlags.locale
+}
+});
+window.campaignVariants = JSON.parse('{}');
+window.campaignBlock = [];
+} catch (e) {
+console.error('Error setting up Optimizely namespaces');
+}
+</script>
+<script nonce="" type="text/javascript" src="https://st2.zoom.us/static/6.3.45448/js/lib/jsSHA/sha256.min.js"></script>
+<script nonce="" type="text/javascript" defer="">
+function pushPageTypeToDataLayer() {
+window.dataLayer = window.dataLayer || [];
+var gtmPageType = "" || undefined;
+var gtmIsSensitiveReferrer = "" || 'false';
+var initialPageLoadObj = {
+'event': 'pageLoad',
+"isSensitiveReferrer": gtmIsSensitiveReferrer
+};
+if (gtmPageType && gtmPageType === "product") {
+initialPageLoadObj.pageType = gtmPageType;
+}
+window.dataLayer.push(initialPageLoadObj);
+}
+function getPageLoadEvent() {
+function getElementValueById(id) {
+var element = document.getElementById(id);
+return element ? element.value || undefined : undefined;
+}
+function getQueryParameterByName(name) {
+if (!window.location.search) {
+return undefined;
+}
+var queryParams = new URLSearchParams(window.location.search);
+return queryParams !== undefined && queryParams.has(name) ? queryParams.get(name) : undefined;
+}
+var gtm_billingEntryABVariant = getElementValueById("gtm_billingEntryABVariant");
+var gtm_billingIsIncreasePriceForPHPABVariant = getElementValueById("gtm_billingIsIncreasePriceForPHPABVariant");
+var gtm_experimentParts = [];
+if (gtm_billingEntryABVariant !== undefined) {
+gtm_experimentParts.push("profile dropdown experiment " + gtm_billingEntryABVariant);
+}
+if (gtm_billingIsIncreasePriceForPHPABVariant !== undefined && gtm_billingIsIncreasePriceForPHPABVariant !== '-1') {
+gtm_experimentParts.push("ph price increase - " + (gtm_billingIsIncreasePriceForPHPABVariant === "1" ? "variant" : "control"));
+}
+var gtm_experimentVariant = gtm_experimentParts.length > 0 ? gtm_experimentParts.join(',') : undefined;
+var gtm_signUpFrom = getQueryParameterByName('signUpFrom');
+return {
+'event': 'pageLoad',
+'pageName': document.getElementById("gtm_pageName").value || undefined,
+'pageLanguage': document.getElementById("gtm_pageLanguage").value || undefined,
+'userCountry': document.getElementById("gtm_userCountry").value || undefined,
+'zoom_id': window.zmGlobalMrktKey || undefined,
+'fullUrl': window.location.href || undefined,
+'userStatus': document.getElementById("gtm_userStatus").value || undefined,
+'userRole': document.getElementById("gtm_userRole").value || undefined,
+'productUserType': document.getElementById("gtm_productUserType").value || undefined,
+'accountType': document.getElementById("gtm_accountType").value || undefined,
+'accountPlanType': document.getElementById("gtm_accountPlanType").value || undefined,
+'accountChannel': document.getElementById("gtm_accountChannel").value || undefined,
+'domainType': document.getElementById("gtm_domainType").value || undefined,
+'billingCycle': document.getElementById("gtm_billingCycle").value || undefined,
+'expirationDate': document.getElementById("gtm_expirationDate").value || undefined,
+'autoRenew': document.getElementById("gtm_autoRenew").value || undefined,
+'rateMrr': document.getElementById("gtm_rateMrr").value || undefined,
+'chargeType': document.getElementById("gtm_chargeType").value || undefined,
+'licenseCount': document.getElementById("gtm_licenseCount").value || undefined,
+'paidStartDate': document.getElementById("gtm_paidStartDate").value || undefined,
+'licenseDiscount': document.getElementById("gtm_licenseDiscount").value || undefined,
+'addOns': document.getElementById("gtm_addOns").value || undefined,
+'trackingGuid': document.getElementById("gtm_trackingGuid").value || undefined,
+'visitorGuid': document.getElementById("gtm_visitorGuid").value || undefined,
+'salesChannel': document.getElementById("gtm_salesChannel").value || undefined,
+'verticalSegment': document.getElementById("gtm_verticalSegment").value || undefined,
+'salesSegment' : document.getElementById("gtm_salesSegment").value || undefined,
+'salesDivision' : document.getElementById("gtm_salesDivision").value || undefined,
+'billingCountry': document.getElementById("gtm_billingCountry").value || undefined,
+'employeeCount' : document.getElementById("gtm_employeeCount").value || undefined,
+'webClusterId' : document.getElementById("gtm_webClusterId").value || undefined,
+'segmentValue' : document.getElementById("gtm_segmentValue").value || undefined,
+'userAge' : document.getElementById("gtm_userAge")? document.getElementById("gtm_userAge").value : undefined,
+'accountNo' : document.getElementById("gtm_accountNo")? document.getElementById("gtm_accountNo").value : undefined,
+'email' : document.getElementById("gtm_email")? document.getElementById("gtm_email").value : undefined,
+'isFeedbackEnabled' : document.getElementById("gtm_feedbackEnabled")? document.getElementById("gtm_feedbackEnabled").value : undefined,
+'isPaidUser' : document.getElementById("gtm_isPaid")? document.getElementById("gtm_isPaid").value : undefined,
+'couponType': document.getElementById("gtm_couponType")
+? document.getElementById("gtm_couponType").value ? document.getElementById("gtm_couponType").value : undefined
+: undefined,
+'discountType': document.getElementById("gtm_discountType")
+? document.getElementById("gtm_discountType").value ? document.getElementById("gtm_discountType").value : undefined
+: undefined,
+'pageType': document.getElementById("gtm_pageType").value || undefined,
+'experimentVariant': gtm_experimentVariant,
+'accountHealthScore': document.getElementById("gtm_accountHealthScore").value || undefined,
+'phonePropensityScore': document.getElementById("gtm_phonePropensityScore").value || undefined,
+'winbackPropensityScore': document.getElementById("gtm_winbackPropensityScore").value || undefined,
+'meetingsUpsellScore': document.getElementById("gtm_meetingsUpsellScore").value || undefined,
+'meetingsUpsellProduct': document.getElementById("gtm_meetingsUpsellProduct").value || undefined,
+'meetingsUpsellChannel': document.getElementById("gtm_meetingsUpsellChannel").value || undefined,
+'isSensitiveReferrer': document.getElementById("gtm_isSensitiveReferrer").value || undefined,
+'fromOP': document.getElementById("gtm_fromOP").value || undefined,
+'vertical': document.getElementById("gtm_vertical").value || undefined,
+'signUpFrom': gtm_signUpFrom,
+}
+}
+function pushToDataLayer (delay) {
+// Fire GTM Page Load event with data.
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push(Object.assign(getPageLoadEvent(), window.extraPageLoadFields || {}));
+}
+pushPageTypeToDataLayer();
+document.addEventListener('DOMContentLoaded', function () {
+// Fire GTM Page Load event with data.
+window.dataLayer = window.dataLayer || [];
+if (window.gtmPromise) {
+window.gtmPromise.then(function () {
+pushToDataLayer();
+});
+} else {
+pushToDataLayer();
+}
+});
+</script>
+<script nonce="">
+window.zmGlobalMrktId = "ec8b72bc0afe456ba1faa6824ae9f83e" || null;
+window.zmGlobalMrktKey = "" || null;
+window['optimizely'] = window['optimizely'] || [];
+window["optimizely"].push({
+"type": "tags",
+"tags": {
+"zm_usr_id_sha256": window.zmGlobalMrktKey || ""
+}
+});
+</script><script nonce="">
+var optimizely = window["optimizely"] || [];
+optimizely.push({"type": "holdEvents"});
+</script>
+<script nonce="" src="https://st2.zoom.us/static/6.3.45448/js/app/optimizely/helper.min.js"></script>
+<script src="https://explore.zoom.us/docs/js/optimizely/optimizely.js" nonce=""></script>
+<script nonce="">
+(function () {
+var optimizely = window["optimizely"];
+if (!optimizely || !optimizely.get) return;
+optimizely.get('utils').waitUntil(function () {
+// wait until default defined OneTrust OptanonWrapper function is defined
+return typeof window.OptanonWrapper !== 'undefined';
+}).then(function () {
+(function (origFunc) {
+window.OptanonWrapper = function () {
+origFunc && origFunc();
+var oneTrustConsentId = OneTrust.getDataSubjectId();
+var activeGroups = (OnetrustActiveGroups || '').split(',');
+activeGroups = activeGroups.filter(function (v) {
+return v !== '';
+});
+// send Optimizely events when Performance consent is given
+if (activeGroups.indexOf('C0002') > -1) {
+optimizely.push({
+"type": "tags",
+"tags": {
+"onetrust_id": oneTrustConsentId || ""
+}
+});
+optimizely.push({"type": "sendEvents"});
+}
+};
+})(window.OptanonWrapper);
+});
+})();
+</script>
+<link type="text/css" rel="stylesheet" href="https://st1.zoom.us/static/6.3.45448/css/fonts/internacional.min.css">
+<link type="text/css" rel="stylesheet" href="https://st3.zoom.us/static/6.3.45448/css/fonts/suisse.min.css">
+<link type="text/css" rel="stylesheet" href="https://st1.zoom.us/static/6.3.45448/css/all.min.css">
+<link href="https://st1.zoom.us/fe-static/fe-frame-popups/assets/index-DnNgEeFW.css" rel="stylesheet">
+<link href="https://st1.zoom.us/fe-static/fe-frame-popups/assets/zoom-ui-vue3-C1yce6TR.css" rel="stylesheet">
+<link href="https://st1.zoom.us/fe-static/fe-signup-login-active/css/vendors~app.fd300935.css" rel="stylesheet">
+<link href="https://st1.zoom.us/fe-static/fe-signup-login-active/css/app.1ad5e290.css" rel="stylesheet">
+<style>
+</style>
+<style>
+body div.combobox div.dropdownlist{
+width: calc(100% + 2px) !important;
+}
+.expired-cc-banner {
+padding: 25px;
+margin-bottom: 0px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 0;
+}
+.expired-cc-banner.warn {
+color: #361E00;
+background-color: #FFF9F2;
+}
+.expired-cc-banner.error {
+color: #44010D;
+background-color: #FFF2F5;
+}
+.expired-cc-banner .alert-warning__content {
+width: 100%;
+margin-left: 20px;
+}
+.expired-cc-banner .zm-icon-warning {
+font-size: 17px;
+color: #B36200;
+}
+.expired-cc-banner .zm-icon-error {
+font-size: 17px;
+color: #E8173D;
+}
+.expired-cc-banner .zm-icon-close {
+color: #131619;
+cursor: pointer;
+}
+#header_login li.pic a#profile-menu-item-billing-upgrade {
+background-color: #0E71EB;
+}
+.profile-menu a.profile-menu-item-billing__upgrade {
+width: calc(100% - 32px);
+padding: 6px 16px !important;
+margin: auto;
+color: #FFFFFF;
+background-color: #0E71EB;
+}
+.profile-menu a.profile-menu-item-billing__upgrade.hover {
+box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0E72ED;
+}
+</style>
+<script nonce="" src="/csrf_js"></script><script id="b91d42d149a911785691c2e0b7682279" src="/assets/zm_bundle.js?seed=AECl-keaAQAAZPx6PzDlt4VhuOHR1FhJSEKVf3sa8Ifpv3LIuAGg-7J6GXee&amp;uQHR71Sqnk--z=q" async=""></script>
+<script nonce="">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'country': 'in'
+});
+//ZOOM-163677
+window.sctyName = '{\"TW\":\"country.TW-TW\",\"CN\":\"country.CN\"}';
+</script>
+<link rel="stylesheet" href="https://st1.zoom.us/static/6.3.45448/js/lib/vue/advanced/notification/notification.min.css">
+<script nonce="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="b0bfa2ae-4058-4aef-8632-a5281ce4464a" data-document-language="true" async=""></script>
+<script nonce="" type="text/javascript">
+function OptanonWrapper() {
+$.i18n.load({
+"marketing.privacy.onetrust.do_not_sell":"Your Privacy Choices",
+"marketing.privacy.onetrust.cookie_pref":"Cookie Preferences"
+});
+var doNotSellDOM = document.getElementById('ot-do-not-sell');
+if (doNotSellDOM) {
+doNotSellDOM.text = $.i18n.get("marketing.privacy.onetrust.do_not_sell");
+}
+let cookiePrefDOM = document.getElementById('ot-cookie-pref');
+if(cookiePrefDOM) {
+cookiePrefDOM.text = $.i18n.get("marketing.privacy.onetrust.cookie_pref");
+}
+var activeGroups = (OnetrustActiveGroups || '').split(',');
+activeGroups = activeGroups.filter(function (v) {
+return v !== '';
+});
+// create `OnetrustActiveGroups` cookie
+var oneTrustActiveCookie = activeGroups.length ? activeGroups.join('') : '';
+var date = new Date();
+date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
+var expires = "; expires=" + date.toUTCString();
+document.cookie = "OnetrustActiveGroups=" + oneTrustActiveCookie + expires + "; path=/; secure=true; domain=" + "zoom.us";
+}
+(function(w) {
+function oneTrustAxFun (event) {
+var el = event.target;
+var classLists = el.getAttribute('class');
+if (classLists && classLists.indexOf('ot-sdk-show-settings') > -1) {
+if (event.code === 'Space' || event.code === 'Enter') {
+el.click && el.click();
+}
+}
+}
+window.removeEventListener('keydown', oneTrustAxFun);
+window.addEventListener('keydown', oneTrustAxFun);
+})(window);
+</script>
+<style>
+.ot-sdk-show-settings {
+cursor: pointer;
+}
+#footer-links .sublinks .ot-sdk-show-settings {
+padding-left: 10px;
+border-left: 1px solid;
+margin-left: 10px;
+}
+#ot-do-not-sell {
+position: relative;
+padding-left: 42px !important;
+}
+#ot-do-not-sell::before {
+content: "";
+position: absolute;
+left: 6px;
+top: 50%;
+transform: translateY(-50%);
+width: 30px;
+height: 15px;
+background-image: url('https://st3.zoom.us/static/6.3.45448/image/marketing/privacyoptions.svg');
+background-size: contain;
+background-repeat: no-repeat;
+}
+</style><script nonce="">
+(function (w, d, s, l, i) {
+w[l] = w[l] || [];
+w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+j.async = true;
+j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5WKFT9');
+</script>
+<script nonce="">
+window.microsDatas = {
+isLoggedIn: false,
+isHaveSideMenu: false,
+showAicCoachMark: true,
+showExternalAccountsCoachMark: false,
+}
+</script>
+<script src="https://cdn.cookielaw.org/scripttemplates/6.21.0/otBannerSdk.js" nonce="" async="" type="text/javascript"></script><script charset="utf-8" src="https://st1.zoom.us/fe-static/fe-signup-login-active/js/i18n-en-US.68c8fa71.js"></script></head>
+<body class="     " data-cd="zoom.us">
+<div class="total-main-content">
+<div id="skiptocontent">
+<a aria-label="Skip to main content" href="#nested">Skip to Main Content</a>
+</div>
+<div id="accessibilityHome">
+<a aria-label="Accessibility overview" href="https://explore.zoom.us/en/accessibility">Accessibility Overview</a>
+</div>
+<div id="nested" class="zoom-newpd">
+<div class="mini-layout" role="main" aria-label="main content">
+<div class="HiddenText"><a id="the-main-content" tabindex="-1"></a></div>
+<div id="app"></div>
+</div>
+<input type="hidden" id="gtm_pageName" value="">
+<input type="hidden" id="gtm_pageLanguage" value="">
+<input type="hidden" id="gtm_userCountry" value="">
+<input type="hidden" id="gtm_userStatus" value="">
+<input type="hidden" id="gtm_productUserType" value="">
+<input type="hidden" id="gtm_userRole" value="">
+<input type="hidden" id="gtm_accountType" value="">
+<input type="hidden" id="gtm_accountPlanType" value="">
+<input type="hidden" id="gtm_accountChannel" value="">
+<input type="hidden" id="gtm_domainType" value="">
+<input type="hidden" id="gtm_billingCycle" value="">
+<input type="hidden" id="gtm_expirationDate" value="">
+<input type="hidden" id="gtm_autoRenew" value="">
+<input type="hidden" id="gtm_rateMrr" value="">
+<input type="hidden" id="gtm_chargeType" value="">
+<input type="hidden" id="gtm_licenseCount" value="">
+<input type="hidden" id="gtm_paidStartDate" value="">
+<input type="hidden" id="gtm_licenseDiscount" value="">
+<input type="hidden" id="gtm_addOns" value="">
+<input type="hidden" id="gtm_trackingGuid" value="">
+<input type="hidden" id="gtm_visitorGuid" value="">
+<input type="hidden" id="gtm_salesChannel" value="">
+<input type="hidden" id="gtm_verticalSegment" value="">
+<input type="hidden" id="gtm_salesSegment" value="">
+<input type="hidden" id="gtm_salesDivision" value="">
+<input type="hidden" id="gtm_billingCountry" value="">
+<input type="hidden" id="gtm_employeeCount" value="">
+<input type="hidden" id="gtm_webClusterId" value="">
+<input type="hidden" id="gtm_segmentValue" value="">
+<input type="hidden" id="gtm_couponType" value="">
+<input type="hidden" id="gtm_discountType" value="">
+<input type="hidden" id="gtm_pageType" value="">
+<input type="hidden" id="gtm_accountHealthScore" value="">
+<input type="hidden" id="gtm_phonePropensityScore" value="">
+<input type="hidden" id="gtm_winbackPropensityScore" value="">
+<input type="hidden" id="gtm_meetingsUpsellScore" value="">
+<input type="hidden" id="gtm_meetingsUpsellProduct" value="">
+<input type="hidden" id="gtm_meetingsUpsellChannel" value="">
+<input type="hidden" id="gtm_isSensitiveReferrer" value="">
+<input type="hidden" id="gtm_fromOP" value="">
+<input type="hidden" id="gtm_billingEntryABVariant" value="">
+<input type="hidden" id="gtm_billingIsIncreasePriceForPHPABVariant" value="">
+<input type="hidden" id="gtm_vertical" value="">
+</div>
+<div id="video_dialog" role="alertdialog" class="noheaderfooterdialog modaldialog hideme">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header clearfix">
+<div class="modal-title"></div>
+<button class="close simplemodal-close" aria-label="close">×</button>
+</div>
+<div class="modal-body">
+<div class="modal-body-container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<input type="hidden" id="__platformCheck" value="">
+<div id="notification"></div>
+<input type="hidden" id="detect" value="https://st2.zoom.us/cdn-detect.png">
+<script nonce="">
+ready(function () {
+var isCDNblocked = readCookie("_zm_cdn_blocked");
+var blk = "unlog_blk";
+var unblk = "unlog_unblk";
+if (isCDNblocked === null || (isCDNblocked !== blk && isCDNblocked !== unblk)) {
+var image = new Image();
+delCookie("_zm_cdn_blocked");
+var timer = setTimeout(function () {
+image.onload = null;
+createCookie("_zm_cdn_blocked", blk, 0.25);
+window.location.reload(true);
+}, 10000);
+image.onload = function () {
+clearTimeout(timer);
+createCookie("_zm_cdn_blocked", unblk, 0.25);
+};
+image.onerror = function () {
+clearTimeout(timer);
+createCookie("_zm_cdn_blocked", blk, 0.25);
+window.location.reload(true);
+};
+var url = document.getElementById("detect").value;
+image.src = url;
+}
+});
+function ready(callback) {
+if (document.readyState !== 'loading') callback();
+else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+else document.attachEvent('onreadystatechange', function () {
+if (document.readyState === 'complete') callback();
+});
+}
+function createCookie(name, value, days) {
+if (days) {
+var date = new Date();
+date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+var expires = "; expires=" + date.toUTCString();
+}
+else var expires = "";
+document.cookie = name + "=" + value + expires + "; path=/; secure=true; domain=" + "zoom.us";
+}
+function readCookie(name) {
+var equal = name + "=";
+var ca = document.cookie.split(';');
+for (var i = 0; i < ca.length; i++) {
+var c = ca[i];
+while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+if (c.indexOf(equal) == 0) return c.substring(equal.length, c.length);
+}
+return null;
+}
+function delCookie(name) {
+createCookie(name,"",-1);
+}
+</script>
+<style type="text/css">
+@media screen and (max-width: 767px) {
+.navbar-signup-header .navbar-header {
+display: block;
+float: left;
+border: none;
+}
+.navbar-signup-header .collapse {
+display: block;
+}
+#header_container .container > .navbar-collapse {
+background-color: #fff;
+border: none;
+}
+#header_outer .navbar-signup-header .navbar-collapse .navbar-right {
+float: right;
+margin-top: 4px;
+}
+}
+</style>
+<script nonce="">
+var isFreeAccount = true;
+var SB = {
+version: '6.3.45448',
+contextPath: '',
+baseUrl: 'https://zoom.us',
+baseStaticUrl: 'https://st3.zoom.us/static/6.3.45448',
+loggedIn: false,
+fbLoggedIn: false,
+fbAppkey: '113289095462482',
+fbAppPage: 'https://apps.facebook.com/zoomvideocall/',
+fbScope: 'email,public_profile',
+pardotPaymentUrl : 'https://go.pardot.com/l/84442/2015-07-23/mw5t',
+pardotBuyUrl : 'https://go.pardot.com/l/84442/2015-07-14/4xht',
+pardotSubscriptionUrl : 'https://go.pardot.com/l/84442/2015-07-23/mv5y',
+pardotActivateUserUrl : 'https://go.pardot.com/l/84442/2015-10-23/mspcv',
+noSignup: 'false',
+disablePayment: false,
+languagePref: 'en-US',
+isGDPRCountry: false
+};
+</script>
+<script type="module" nonce="" src="https://st1.zoom.us/fe-static/fe-frame-popups/frame.DTmSD913.js"></script>
+<script type="module" nonce="" src="https://st1.zoom.us/fe-static/fe-frame-popups/assets/chunk-vendor-BrQpKQJf.js"></script>
+<script type="module" nonce="" src="https://st1.zoom.us/fe-static/fe-frame-popups/assets/zoom-ui-vue3-DrI8Va8X.js"></script>
+<script nonce="" src="https://st3.zoom.us/static/6.3.45448/js/lib/vue/vue.min.js"></script>
+<script nonce="">
+window.Vue && window.__MONITOR__ && (window.Vue.config.errorHandler = window.__MONITOR__.vueGlobalErrorHandler)
+</script>
+<script nonce="">
+// common captcha setting
+var routingUrl=""
+var hCaptchaSiteKey="df6242b3-aef1-4156-bf8e-c5f258d9e602"
+var gRecaptchaVisible="6LdZ7KgaAAAAACd71H_lz76FwfcJpc4OQ1J7MDWA";
+var gRecaptchaInvisible="6Lf2C54aAAAAAOOpnJT1sg39rowHN362Zj2QSyls";
+var cfRecaptchaCheckboxSiteKey="0x4AAAAAAAZQvKXdvahp4tEM";
+var cfRecaptchaInvisibleSiteKey="0x4AAAAAAAZQvcBUTC_uhZW5";
+var canSkipCaptcha= false || false
+var isGrecaptchaEnt= true || false
+var isCN = false;
+var isSupportGoogleCaptcha = true;
+var isSupportGoogleCaptchaForCN = true || false
+var isSupportHcaptcha = false;
+var isSupportCfCaptcha = false;
+var isSmartCaptcha = true; // default
+var isHcaptcha = false; // default
+var isCfCaptcha = false // default
+if (canSkipCaptcha){
+isSmartCaptcha = true;
+isHcaptcha = false;
+} else if (isSupportGoogleCaptcha) {
+// google captcha
+if (!isCN || isSupportGoogleCaptchaForCN) {
+isSmartCaptcha = false;
+isHcaptcha = false;
+}
+} else if(isSupportCfCaptcha) {
+// cloudflare turnstile captcha
+isSmartCaptcha = false;
+isCfCaptcha = true;
+} else if (isSupportHcaptcha){
+// hcaptcha
+isSmartCaptcha = false;
+isHcaptcha = true;
+} else {
+// smart captcha
+isSmartCaptcha = true;
+isHcaptcha = false;
+}
+// common setting for front-end project
+var clock_out_path = '/clockout';
+</script>
+<script nonce="">
+var seoPageUrl = '\/signin';
+window.enableLocaleLanguageTag = true;
+window.seoPageUrl = seoPageUrl;
+</script>
+<script nonce="" src="https://st1.zoom.us/static/6.3.45448/js/all.min.js"></script>
+<script nonce="">
+$.i18n.load({
+"common.btn_close": "Close",
+"common.btn_yes": "Yes",
+"common.btn_no": "No",
+"common.title.prompt": "Prompt",
+"common.title.confirmation": "Confirmation",
+"common.unknown_error": "Unknown Error!",
+"common.error": "Error",
+"common.enter_time_in_12_hour": "Please enter a valid time in 12-hour",
+"common.tips": "Tips, press Enter to expand",
+"jquery.validation_required":"This field is required.",
+"jquery.validation_remote":"Please fix this field.",
+"jquery.validation_email":"Please enter a valid email address.",
+"jquery.validation_url":"Please enter a valid URL.",
+"jquery.validation_date":"Please enter a valid date.",
+"jquery.validation_dateISO":"Please enter a valid date (ISO).",
+"jquery.validation_number":"Please enter a valid number.",
+"jquery.validation_digits":"Please enter only digits.",
+"jquery.validation_creditcard":"Please enter a valid credit card number.",
+"jquery.validation_equalTo":"Please enter the same value again.",
+"jquery.validation_maxlength":"Please enter no more than {0} characters.",
+"jquery.validation_minlength":"Please enter at least {0} characters.",
+"jquery.validation_rangelength":"Please enter a value between {0} and {1} characters long.",
+"jquery.validation_range":"Please enter a value between {0} and {1}.",
+"jquery.validation_max":"Please enter a value less than or equal to {0}.",
+"jquery.validation_min":"Please enter a value greater than or equal to {0}.",
+"billing.pastdue.notice":"Past Due Notice",
+"billing.pastdue.notice_summary":"You have one or more invoices overdue. Failure to pay the full invoice balance may result in temporary suspension or cancellation of your subscription. Click <a href=\"javascript:void(0)\" class=\"past_due_pay_link\">here<\/a> to pay or click <a href=\"https://support.zoom.us/hc/en-us/sections/4415044540045-Billing-and-Payments\">here<\/a> for support.",
+"billing.pastdue.balance_new":"Your account has an outstanding balance of {0}{1}.",
+"billing.pastdue.terminate_time":"If you do not pay your balance you will revert to a Basic plan on {0}.",
+"billing.pastdue.terminate_soon":"If you do not pay your balance you will revert to a Basic plan.",
+"billing.pastdue.will_loose":"If you do not pay your balance, you will lose access to all paid features and cloud recordings.",
+"billing.pastdue.this_means":"This means that you will lose many of the features you currently have.",
+"billing.pastdue.pay_online":"<a href=\"/billing/report\" onClick=\"ga(\'send\', \'event\', \'billing\', \'click-pastdue-paynow-link\', \'Past Due Notification Pay Now Link\');\">Click here<\/a> to pay your outstanding invoice(s) or call us at 1.888.799.9666 to avoid a service interruption.",
+"billing.pastdue.pay_online_autopay":"Click <a href=\"javascript:void(0)\" class=\"past_due_pay_link\">here<\/a> to pay your outstanding invoice(s) or click <a href=\"https://support.zoom.us/hc/en-us/sections/4415044540045-Billing-and-Payments\">here<\/a> for support.",
+"billing.pastdue.contact_sales":"<a href=\"/billing/contactus\" target=\"_blank\">Contact sales<\/a> or call us at 1.888.799.9666 to avoid a service interruption.",
+"billing.payment.ach.verify.failed":"Your payment method was not successfully verified. Please navigate to <a href=\"/billing/payment\">Billing Information<\/a> to update your payment method.",
+"billing.payment.ach.verify.pending.error":"You are unable to complete this payment since your payment method is pending verification. Please go to <a href=\"/billing/payment\">Billing Information<\/a> and complete verification then retry.",
+"billing.tax_exemption.label":"Tax Status",
+"billing.tax_exemption.link":"Verify Tax Exemption Status",
+"billing.tax_exemption.link_desc":"You will be taken to ECMS to validate your tax exemption status.<br/>Please make sure pop-ups aren\'t blocked.",
+"billing.tax_exemption.in_progress_title":"Tax Exemption Verification in Progress",
+"billing.tax_exemption.in_progress_desc":"Please complete your tax exemption verification on our partner website. When you have finished verifying your tax status you will return here to complete your order.<br/><br/>Please do not make any changes to this page or close out until the verification is complete. If you no longer need to proceed with tax exemption you may close and continue placing your order.",
+"billing.tax_exemption.in_progress_close_button":"Close",
+"billing.tax_exemption.quit_progress_title":"Are you sure?",
+"billing.tax_exemption.quit_progress_desc":"Are you sure you want to abandon tax exemption verification and proceed as tax eligible?",
+"billing.tax_exemption.quit_progress_confirm":"Yes, Abandon",
+"billing.tax_exemption.quit_progress_cancel":"No, Continue",
+"billing.tax_exemption.status_incomplete":"Verification incomplete, please click again if you wish to be tax exempt",
+"billing.tax_exemption.status_exempt":"Tax Exempt",
+"billing.tax_exemption.status_exempt_short":"Exempt",
+"billing.tax_exemption.status_pending":"Pending",
+"billing.tax_exemption.status_pending_desc":"Your tax exemption status is currently under review. You will be charged tax upon placing this order, should the review be approved we will credit any tax charged to the account.",
+"billing.tax_exemption.status_retrieving":"Retrieving...",
+"billing.tax_exemption.status_retrieving_desc":"We are retrieving your tax exemption status, please wait.",
+"billing.tax_exemption.status_nonexempt":"Non-Exempt",
+"meeting.upcoming_meetings":"Upcoming Meetings",
+"meeting.current.start_this_meeting":"Would you like to start this meeting?",
+"meeting.current.start_these_meetings":"Would you like to start one of these meetings?",
+"meeting.current.view_more":"View more...",
+"meeting.current.start_new_meeting":"Start a New Meeting",
+"meeting.password.opt_out_acceptChange_success":"Passcodes will be enabled by default on {0} for your account.",
+"meeting.password.opt_out_success":"Passcodes will not be enabled by default for your account.",
+"meeting.opt_out_desc.zr_upgrade1":"Passcodes will be enabled by default on {0} for your account.",
+"meeting.opt_out_desc.zr_upgrade2":"We recommend upgrading your <a href=\"/location\">Zoom Rooms and Zoom Rooms Controller<\/a> to the latest version for an optimal join experience",
+"meeting.password.opt_out_notice_title":"Important Update",
+"meeting.password.opt_out_notice":"Zoom will update your account settings to turn on passcodes by default for meetings and webinars on {0}. <a href=\"javascript:void(0)\" onclick=\"showMeetingPassWordOptOut()\">Click<\/a> here to learn more or if you wish to opt out of this change.",
+"feature.settings.submit_message_success":"Your settings have been updated.",
+"billing.new_menu_tips.title": "Your Billing has moved!",
+"billing.new_menu_tips.content": "Effortlessly manage your plan, billing, payment history, and more in Plans and Billing. Get an overview of all the new and updated features in our <a href=\"https://support.zoom.us/hc/articles/16542703332621\" target=\"_blank\">support article<\/a>",
+"billing.new_menu_tips_free.title": "Plans and Billing has moved",
+"billing.new_menu_tips_free.content": "Upgrade your plan in Plan Management to access new features!",
+"billing.cstp.phone.reminder1.title": "Set up your Zoom Phone plan",
+"billing.cstp.phone.reminder1.content": "Complete the initial setup guide to activate your Zoom Phone and unlock key features.",
+"billing.cstp.zop.reminder1.title": "Set up your Zoom One Pro plan",
+"billing.cstp.zop.reminder1.content": "Complete the initial setup guide to get your new plan up and running.",
+"billing.cstp.zob.reminder1.title": "Set up your Zoom One Business plan",
+"billing.cstp.zobp.reminder1.title": "Set up your Zoom One Business Plus plan",
+"billing.cstp.zobp.reminder1.content": "Complete the initial setup guide to activate Zoom Phone and get your plan up and running.",
+"billing.cstp.multiple_products.reminder1.title": "Set up your new Zoom plans",
+"billing.cstp.multiple_products.reminder1.content": "Complete the initial setup guides to get your new plans up and running.",
+"billing.cstp.phone.reminder2.title": "Complete your Zoom Phone setup",
+"billing.cstp.single_product.reminder2.content": "Finish the remaining tasks to start enjoying all of the benefits of your new plan.",
+"billing.cstp.zop.reminder2.title": "Complete your Zoom One Pro setup",
+"billing.cstp.zob.reminder2.title": "Complete your Zoom One Business setup",
+"billing.cstp.zobp.reminder2.title": "Complete your Zoom One Business Plus setup",
+"billing.cstp.multiple_products.reminder2.title": "Complete setting up your new Zoom plans",
+"billing.cstp.multiple_products.reminder2.content": "Finish the remaining tasks to start enjoying all of the benefits of your new plans.",
+"billing.cstp.zopp.reminder1.title": "Set up your Zoom Workplace Pro Plus plan",
+"billing.cstp.zopp.reminder2.title": "Complete your Zoom Workplace Pro Plus setup",
+"billing.cstp.zopp.reminder1.content": "Complete the initial setup guide to activate Zoom Phone and get your plan up and running.",
+});
+</script>
+<script nonce="" src="https://st3.zoom.us/static/6.3.45448/js/app/jquery.validate.message.min.js"></script>
+<script nonce="">
+var teslaReg = /TESLA/
+function hasClass (el, cls) {
+if (!el || !cls) return false
+if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.')
+if (el.classList) {
+return el.classList.contains(cls)
+} else {
+return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1
+}
+}
+function addClass (el, cls) {
+if (!el) return
+var curClass = el.className
+var classes = (cls || '').split(' ')
+for (var i = 0, j = classes.length; i < j; i++) {
+var clsName = classes[i]
+if (!clsName) continue
+if (el.classList) {
+el.classList.add(clsName)
+} else if (!hasClass(el, clsName)) {
+curClass += ' ' + clsName
+}
+}
+if (!el.classList) {
+el.className = curClass
+}
+}
+if (teslaReg.test(window.navigator.userAgent)) {
+if (!hasClass(document.body, 'tesla-dark')) {
+addClass(document.body, 'zm-theme--dark tesla-dark')
+}
+}
+</script>
+<script nonce="">
+window.dataForFE = {
+pageType: 'Login',
+isNoSignUp: false,
+isCN: false,
+enableNewLoginEntry: true,
+enableSignUpForCN: false,
+isHideHeader: false, //__is_hide_header
+isMobileFromPricing: false,
+isFromChromePWA: false,
+isRegistered: false,
+paramFrom: "",
+existedEmailWork: false,
+enableHashEmailLogin: true,
+existedEmailGmail: false,
+existedEmailFacebook: false,
+paramEmail: "",
+isWorkEmailLoginDisabled: false,
+existEmail: "",
+zeDomain: "",
+simpleMode: false,
+productName: "",
+needCaptcha: true,
+isSmart: false,
+disableInvisibleCaptcha: false,
+isFromZoomEvents: false,
+enableEventsToWebinarsAndEvents: false,
+signInImage: "{\"imageDetails\":{\"publicURL\":\"https://file-paa.zoom.us/uvOb5xsBR72XrFPhoBwAjQ/MS4zLmoTHo7FvM6cjJL50vVt6l9x6qjOjzfdG91qhBe3MhPX/ac167837-e7c1-4135-9112-44a4cc529ca7.png\",\"fileId\":\"uvOb5xsBR72XrFPhoBwAjQ\"},\"destinationURL\":\"https://click.zoom.com/gartner-magic-quadrant-for-ucaas?itm_source=imm&itm_medium=sip&itm_campaign=FY26-Q3-Global-Gartner-UCaaS-MQ-2025-IM68074\",\"alt\":\"Read the report\",\"bannerTitle\":\"\",\"bannerBody\":\"\",\"noticeId\":\"RyUY6LAnS5C45dFlHus6DQ\"}",
+enableChangeKmsCookieToStrictly : true,
+reject: false,
+enableQRCodeLogin: false,
+isPhoneLoginEnable: true,
+allowLoginPhoneCountryList: "[]",
+newResetPasswordPageEnabled: true,
+disable_signin_credential_captcha_check: false,
+errorCode: "",
+isGov: false,
+SSOLoginURL: "\/web/sso/login?en=signin",
+appleLoginURL: "\/apple_oauth_signin",
+googleLoginURL: "\/google_oauth_signin",
+facebookLoginURL: "\/facebook_oauth_signin",
+microsoftLoginUrl: "\/microsoft_oauth_signin",
+}
+window.domainFromServer= 'https://st1.zoom.us/fe-static/';
+</script>
+<script nonce="" src="https://st1.zoom.us/fe-static/fe-signup-login-active/js/vendors~app.4a98f9b0.js"></script>
+<script nonce="" src="https://st1.zoom.us/fe-static/fe-signup-login-active/js/zoomUI~app.15899df2.js"></script>
+<script nonce="" src="https://st1.zoom.us/fe-static/fe-signup-login-active/js/app.305ecf0e.js"></script></div><iframe src="https://a20673560014.cdn.optimizely.com/client_storage/a20673560014.html" hidden="" tabindex="-1" title="Optimizely Internal Frame" height="0" width="0" style="display: none;"></iframe><p role="status" class="aria-alert-hidden"></p><span aria-live="polite" class="aria-alert-hidden"></span></body></html>

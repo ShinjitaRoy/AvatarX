@@ -1,0 +1,7 @@
+
+
+Meeting Summary (test_meeting)
+Time: 2025-11-05 19:15:00
+--------------------------------------------------
+
+The speaker announced that they have a new job as a React Developer.

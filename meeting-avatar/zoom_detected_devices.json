@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "audioinput",
+    "label": "Default - Microphone Array (Realtek(R) Audio)",
+    "deviceId": "default"
+  },
+  {
+    "kind": "audioinput",
+    "label": "Communications - CABLE Output (VB-Audio Virtual Cable)",
+    "deviceId": "communications"
+  },
+  {
+    "kind": "audioinput",
+    "label": "Microphone Array (Realtek(R) Audio)",
+    "deviceId": "2c788702e60de47458a6a60c82aa8c730ad051bd09b4a104da638192920053d8"
+  },
+  {
+    "kind": "audioinput",
+    "label": "CABLE Output (VB-Audio Virtual Cable)",
+    "deviceId": "36479311f78d2898ada40e185ef87038865c16039e5bd0c30d76c6b5a7375690"
+  },
+  {
+    "kind": "audioinput",
+    "label": "AI Noise-cancelling Input (ASUS Utility)",
+    "deviceId": "34b3be342fb5283b5259022b7af7b148ae8f7966dddd188162fa59ec3d46554c"
+  },
+  {
+    "kind": "videoinput",
+    "label": "OBS Virtual Camera",
+    "deviceId": "651ec4980a818b661b640c11c78592272f207ad0576fba37efe9fede30c8d23d"
+  },
+  {
+    "kind": "audiooutput",
+    "label": "Default - Speakers (Realtek(R) Audio)",
+    "deviceId": "default"
+  },
+  {
+    "kind": "audiooutput",
+    "label": "Communications - Speakers (Realtek(R) Audio)",
+    "deviceId": "communications"
+  },
+  {
+    "kind": "audiooutput",
+    "label": "CABLE In 16ch (VB-Audio Virtual Cable)",
+    "deviceId": "0e5d323c6cb6b620167903f275d5ff40cd7ad8717e89a18c9a8cc9c6081a58a3"
+  },
+  {
+    "kind": "audiooutput",
+    "label": "AI Noise-cancelling Output (ASUS Utility)",
+    "deviceId": "90a1f72f2aad2119fa849e3353c3cca130144682a22f28bb04b1211f009f3ace"
+  },
+  {
+    "kind": "audiooutput",
+    "label": "CABLE Input (VB-Audio Virtual Cable)",
+    "deviceId": "f6d4f7701bbb9db7e9433bb9caf82716f9f55dccc0094f0ef1b6b663acd66236"
+  },
+  {
+    "kind": "audiooutput",
+    "label": "Speakers (Realtek(R) Audio)",
+    "deviceId": "0fe2475abd28bc8bcebd746cb5069121d44e8d395ef83851c2fae3498d1816e8"
+  }
+]

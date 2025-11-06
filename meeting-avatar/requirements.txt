@@ -1,0 +1,40 @@
+# Base requirements
+# Use a requests version compatible with gTTS/transformers
+requests==2.28.2
+Werkzeug==2.0.3
+Flask==2.0.1
+python-dotenv==0.19.1
+flask-cors==4.0.0
+
+# Audio processing
+pyaudio==0.2.13
+wave==0.0.2
+pydub==0.25.1
+SpeechRecognition==3.8.1
+
+# ML/AI
+numpy==1.24.3
+torch==2.1.0
+transformers==4.34.0
+openai-whisper==20231117
+google-cloud-speech==2.21.0
+google-generativeai==0.3.0
+
+# Avatar/Graphics
+opencv-python==4.8.1.78
+pyglet>=2.0.0
+matplotlib==3.7.1
+
+# Testing/Utils
+pytest==6.2.4
+schedule==1.2.0
+playwright==1.39.0
+
+# Text processing
+nltk==3.8.1
+gTTS==2.3.2
+
+# Optional dependencies
+ffmpeg-python==0.2.0
+pycaw==20230407
+requirements-parser==0.2.0

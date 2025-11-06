@@ -1,0 +1,11 @@
+Combined OCR started at 2025-11-06T01:53:44.127118
+interval=2s duration=6s start_delay=5s
+
+--- 00:00 ---
+ote 318 def bat 388 with as f: pC ae re RY alloc ating 390 cropped images: lam not ge 391 Combined OCR saved to Cropped images save return 392 Aniket Bb 395 M) oo messages Quota. 396 if ae Pro day free 397 ae to ren os cp ocr txt PROBLEMS OUTPUT TERMINAL PORTS PJ or OD 02 PS pip install pya utogui PS C: python app Traceback recent call last): File line 198, in ture py File line 88, in File line 396, hager py in text py if wppy AAAAAA NameError: name is not defined. Did you mean: Add context exter PS python app Aut
+
+--- 00:04 ---
+ote 318 def bat 388 with as f: aoe TTT TST REIT allocating 390 cropped images: lam not ge 391 Combined OCR saved to Cropped images save return 392 ia. 395 messages quota. 396 if ae Pro day free 397 allowance to ren os cp ocr txt OUTPUT DEBUG CONSOLE TERMINAL PORTS PJ or OD 02 PS pip install pya utogui PS C: python app Traceback recent call last): File line 198, in File line 88, in ture py File line 396, in J) Py if text py AAAAAA wppy NameError: name is not defined. Did you mean: PS python app AGd context exter Starting in captures at offsets: 2, res Ask Auto
+
+--- End of capture at 2025-11-06T01:53:55.464853 ---
+Kept cropped images: 3

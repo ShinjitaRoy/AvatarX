@@ -1,0 +1,11 @@
+openai-whisper==20231106
+gTTS==2.4.0
+SpeechRecognition==3.10.0
+pyaudio==0.2.13
+transformers==4.35.0
+torch==2.1.0
+numpy==1.24.3
+wave==0.0.2
+python-dotenv==1.0.0
+nltk==3.8.1
+openai==0.27.9
