@@ -1,6 +1,6 @@
 # Meeting Avatar - AI-Powered Meeting Assistant
 
-An intelligent meeting assistant that records, transcribes, summarizes meetings and generates audio summaries using AI.
+An intelligent assistant that records, transcribes, summarizes meetings and generates audio summaries using AI.
 
 ## Features
 
